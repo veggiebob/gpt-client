@@ -11,5 +11,4 @@ if __name__ == '__main__':
 
     messages = json.loads(bf)
     response = ask_with_messages(messages)
-
-
+    print(response)
