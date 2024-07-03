@@ -13,7 +13,6 @@ if __name__ == '__main__':
     response = ask_with_messages(messages)
     print(json.dumps(
         messages + [
-            M_USER(bf),
             M_ASS(response)
         ]
     ))
