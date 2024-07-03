@@ -11,8 +11,8 @@ if __name__ == '__main__':
 
     messages = json.loads(bf)
     response = ask_with_messages(messages)
-    print(json.dumps(
-        messages + [
+    print(json.dumps({
+        'messages': messages + [
             M_ASS(response)
         ]
-    ))
+    }))
