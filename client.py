@@ -1,7 +1,7 @@
 import sys
 import random
 import json
-from ai_writer import ask_raw, ask_with_messages
+from ai_writer import ask_raw, ask_with_messages, M_ASS, M_USER
 
 if __name__ == '__main__':
     cmd_args = sys.argv[1:]
@@ -11,4 +11,9 @@ if __name__ == '__main__':
 
     messages = json.loads(bf)
     response = ask_with_messages(messages)
-    print(response)
+    print(json.dumps(
+        messages + [
+            M_USER(bf),
+            M_ASS(response)
+        ]
+    ))
